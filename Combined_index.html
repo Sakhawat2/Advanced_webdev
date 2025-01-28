@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Single Page Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1em 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.2em;
+        }
+
+        section {
+            padding: 60px 20px;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+
+        section:nth-of-type(even) {
+            background-color: #f4f4f4;
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section id="home">
+        <h1>Welcome to My Website</h1>
+        <p>We are dedicated to bringing you the best service and solutions.</p>
+        <p><strong>Our mission:</strong> To provide quality content and services that exceed expectations.</p>
+    </section>
+    <section id="about">
+        <h1>About Us</h1>
+        <p>Founded in 2025, our company has grown from a small startup to a leading provider of tech solutions.</p>
+        <p>We believe in innovation, dedication, and putting our customers first.</p>
+    </section>
+    <section id="services">
+        <h1>Our Services</h1>
+        <ul>
+            <li><strong>Web Development:</strong> Creating stunning, responsive websites.</li>
+            <li><strong>Mobile Apps:</strong> Developing user-friendly mobile applications.</li>
+            <li><strong>SEO Optimization:</strong> Helping your website rank higher in search results.</li>
+        </ul>
+    </section>
+    <section id="contact">
+        <h1>Contact Us</h1>
+        <p>Have questions or need assistance? Reach out to us!</p>
+        <p>Email: md.hossain2@centria.fi</p>
+        <p>Phone: +358417295788</p>
+    </section>
+    <script>
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetID = this.getAttribute('href').substring(1);
+                document.getElementById(targetID).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
