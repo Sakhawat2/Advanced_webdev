@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import './App.css';
 
 function ClickCounter({ counter, incrementCounter }) {
   return (
@@ -10,7 +11,12 @@ function ClickCounter({ counter, incrementCounter }) {
 }
 
 function Greeting({ counter }) {
-  return <h1>Hello, welcome to the React world! You've clicked {counter} times</h1>;
+  return (
+    <div>
+      <h1>Hello, welcome to the React world! You've clicked {counter} times</h1>
+      <p>This is Sakhawat page</p>
+    </div>
+  );
 }
 
 function App() {
@@ -26,4 +32,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
