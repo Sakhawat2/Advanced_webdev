@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 10px 15px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        button.edit {
+            background-color: #ffc107;
+        }
+
+        button.delete {
+            background-color: #dc3545;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>User Management</h1>
+        <form id="userForm">
+            <input type="hidden" id="userId">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" required>
+            </div>
+            <div class="form-group">
+                <label for="country">Country</label>
+                <input type="text" id="country" required>
+            </div>
+            <button type="submit">Add User</button>
+        </form>
+
+        <h2>Users</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Country</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="usersTableBody"></tbody>
+        </table>
+    </div>
+
+    <script>
+        const userForm = document.getElementById('userForm');
+        const usersTableBody = document.getElementById('usersTableBody');
+        let isEditing = false;
+
+        // Fetch all users
+        async function fetchUsers() {
+            const response = await fetch('/users');
+            const users = await response.json();
+            usersTableBody.innerHTML = '';
+            users.forEach(user => {
+                const tr = document.createElement('tr');
+                tr.innerHTML = `
+          <td>${user.name}</td>
+          <td>${user.age}</td>
+          <td>${user.country}</td>
+          <td>
+            <button class="edit" data-id="${user.id}">Edit</button>
+            <button class="delete" data-id="${user.id}">Delete</button>
+          </td>
+        `;
+                usersTableBody.appendChild(tr);
+            });
+        }
+
+        // Add or update a user
+        userForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const id = document.getElementById('userId').value;
+            const name = document.getElementById('name').value;
+            const age = document.getElementById('age').value;
+            const country = document.getElementById('country').value;
+
+            const method = isEditing ? 'PUT' : 'POST';
+            const url = isEditing ? `/users/${id}` : '/users';
+            const response = await fetch(url, {
+                method: method,
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ name, age, country })
+            });
+
+            if (response.ok) {
+                fetchUsers();
+                userForm.reset();
+                isEditing = false;
+                document.querySelector('button[type="submit"]').textContent = 'Add User';
+            } else {
+                console.error('Error:', await response.json());
+            }
+        });
+
+        // Edit functionality in HTML
+        usersTableBody.addEventListener('click', async (e) => {
+            const id = e.target.getAttribute('data-id');
+
+            if (e.target.classList.contains('edit')) {
+                const response = await fetch(`/users/${id}`);
+                const user = await response.json();
+
+                document.getElementById('userId').value = user.id;
+                document.getElementById('name').value = user.name;
+                document.getElementById('age').value = user.age;
+                document.getElementById('country').value = user.country;
+                document.querySelector('button[type="submit"]').textContent = 'Update User';
+                isEditing = true;
+            }
+
+            if (e.target.classList.contains('delete')) {
+                const response = await fetch(`/users/${id}`, {
+                    method: 'DELETE'
+                });
+
+                if (response.ok) {
+                    fetchUsers();
+                } else {
+                    console.error('Error:', await response.json());
+                }
+            }
+        });
+
+        // Initial fetch of users
+        fetchUsers();
+    </script>
+</body>
+
+</html>
