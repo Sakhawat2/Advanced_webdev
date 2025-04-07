@@ -90,9 +90,9 @@ Tools for UI Prototyping: **Figma**.
 **Project Management:**  
 - Use tools like **Trello** or **Jira** to organize tasks.  
 - Milestones:
-  - Week 1: Complete definition and design.  
-  - Week 2–4: Develop core functionalities (e.g., expense entry, dashboard).  
-  - Week 5–6: Integrate advanced features (e.g., budget notifications, data export) and test functionality.  
+  - Week 15 (07.04.2025): Complete definition and design.  
+  - Week 15 (10.04.2025): Develop core functionalities (e.g., expense entry, dashboard).  
+  - Week 16 (14.04.2025): Integrate advanced features (e.g., budget notifications, data export) and test functionality.  
 
 **User Testing:**  
 - Recruit 3 –5 testers to review usability.  
