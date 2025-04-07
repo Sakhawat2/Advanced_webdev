@@ -43,24 +43,24 @@ The main interface includes:
 1. **Login/Sign-up Page:**  
    - Minimalistic design ensuring easy user access.  
 
-   ![alt text](image.png)
+   ![alt text](Photos/image.png)
 
 2. **Dashboard:**  
    - Contains visual representations (e.g., pie charts, bar graphs) and expense summaries. 
 
-![alt text](image-1.png)
+![alt text](Photos/image-1.png)
 
 
 
 3. **Expense Entry Form:**  
    - Includes fields for amount, date, category, and description with dropdown menus for category selection.  
 
-   ![alt text](image-2.png)
+   ![alt text](Photos/image-2.png)
 
 4. **Reports Page:**  
    - Allows users to view detailed expense reports, filter by date, and export data in PDF/Excel formats. 
-   ![alt text](image-3.png) 
-   
+   ![alt text](Photos/image-3.png) 
+
 
 Tools for UI Prototyping: **Figma**.  
 
