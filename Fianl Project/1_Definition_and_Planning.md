@@ -31,10 +31,20 @@ To better understand the target audience, we define two key user personas:
 
 **User Flow Example:**  
 - **Flow 1:**  
-  1. User logs in to the system.  
+  1. User create a user account to the system.  
   2. Navigates to the dashboard.  
   3. Clicks “Add Expense” to input data.  
-  4. Data updates dynamically, and the user sees an updated summary.  
+  4. Data updates dynamically, and the user sees an updated summary.
+ 
+
+- **Flow 2:**  
+  1. User logs in to the system.  
+  2. Navigates to the dashboard.  
+  3. Clicks “Add Expense” to input data.
+  4. Clicks “Update” to modify data.
+  5. Clicks “Delate” to delate particular data.
+  6. Data updates dynamically, and the user sees an updated summary.  
+
 
 ---
 
@@ -76,9 +86,9 @@ Tools for UI Prototyping: **Figma**.
 1. **Login/Sign-up → Dashboard → Add Expense → Reports**  
 
 **Technical Design:**  
-1. **Frontend:** Built using **React** with libraries such as **Material-UI** or **TailwindCSS**.  
+1. **Frontend:** Built using **React** with libraries.  
 2. **Backend:** Developed with **Node.js** and **Express.js**.  
-3. **Database:** **MongoDB** for storing user profiles and expenses.  
+3. **Database:** **NoSQL Databases** for storing user profiles and expenses.  
 4. **API Design:**  
    - `POST /expenses` for adding new expenses.  
    - `GET /expenses` for retrieving expense data.  
@@ -91,8 +101,8 @@ Tools for UI Prototyping: **Figma**.
 - Use tools like **Trello** or **Jira** to organize tasks.  
 - Milestones:
   - Week 15 (07.04.2025): Complete definition and design.  
-  - Week 15 (10.04.2025): Develop core functionalities (e.g., expense entry, dashboard).  
-  - Week 16 (14.04.2025): Integrate advanced features (e.g., budget notifications, data export) and test functionality.  
+  - Week 16 (14.04.2025): Develop core functionalities (e.g., expense entry, dashboard).  
+  - Week 18 (4.05.2025): Integrate advanced features (e.g., budget notifications, data export) and test functionality.  
 
 **User Testing:**  
 - Recruit 3 –5 testers to review usability.  
