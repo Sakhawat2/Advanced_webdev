@@ -1,4 +1,7 @@
 # Project phase 1 - Definition and planning 
+
+An application where users can add, categorize, and view expenses. It could include features like filtering by date or category and generating reports.
+
 #### **1. User Personas**  
 To better understand the target audience, we define two key user personas:
 1. **Young Professional**  
@@ -58,21 +61,21 @@ The main interface includes:
 2. **Dashboard:**  
    - Contains visual representations (e.g., pie charts, bar graphs) and expense summaries. 
 
-![alt text](Photos/image-1.png)
+![alt text](Photos/Pic2.jpg)
 
 
 
 3. **Expense Entry Form:**  
    - Includes fields for amount, date, category, and description with dropdown menus for category selection.  
 
-   ![alt text](Photos/image-2.png)
+   ![alt text](Photos/Pic3.jpg)
 
 4. **Reports Page:**  
    - Allows users to view detailed expense reports, filter by date, and export data in PDF/Excel formats. 
-   ![alt text](Photos/image-3.png) 
+   ![alt text](Photos/Pic4.jpg) 
 
 
-Tools for UI Prototyping: **Figma**.  
+Tools for UI Prototyping: **Figma**. [here](https://www.figma.com/design/H4SGWyUIgBFUWmIejZQHz8/Personal-Expense-Tracker?node-id=0-1&t=3OfykP3QYy3JAXY4-1) 
 
 ---
 
