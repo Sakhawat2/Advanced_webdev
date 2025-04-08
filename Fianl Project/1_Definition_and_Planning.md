@@ -53,7 +53,7 @@ The main interface includes:
 1. **Login/Sign-up Page:**  
    - Minimalistic design ensuring easy user access.  
 
-   ![alt text](Photos/image.png)
+   ![alt text](Photos/Pic1.jpg)
 
 2. **Dashboard:**  
    - Contains visual representations (e.g., pie charts, bar graphs) and expense summaries. 
