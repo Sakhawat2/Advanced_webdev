@@ -1,4 +1,7 @@
 # Project phase 1 - Definition and planning 
+
+An application where users can add, categorize, and view expenses. It could include features like filtering by date or category and generating reports.
+
 #### **1. User Personas**  
 To better understand the target audience, we define two key user personas:
 1. **Young Professional**  
@@ -31,10 +34,20 @@ To better understand the target audience, we define two key user personas:
 
 **User Flow Example:**  
 - **Flow 1:**  
-  1. User logs in to the system.  
+  1. User create a user account to the system.  
   2. Navigates to the dashboard.  
   3. Clicks “Add Expense” to input data.  
-  4. Data updates dynamically, and the user sees an updated summary.  
+  4. Data updates dynamically, and the user sees an updated summary.
+ 
+
+- **Flow 2:**  
+  1. User logs in to the system.  
+  2. Navigates to the dashboard.  
+  3. Clicks “Add Expense” to input data.
+  4. Clicks “Update” to modify data.
+  5. Clicks “Delate” to delate particular data.
+  6. Data updates dynamically, and the user sees an updated summary.  
+
 
 ---
 
@@ -43,26 +56,26 @@ The main interface includes:
 1. **Login/Sign-up Page:**  
    - Minimalistic design ensuring easy user access.  
 
-   ![alt text](Photos/image.png)
+   ![alt text](Photos/Pic1.jpg)
 
 2. **Dashboard:**  
    - Contains visual representations (e.g., pie charts, bar graphs) and expense summaries. 
 
-![alt text](Photos/image-1.png)
+![alt text](Photos/Pic2.jpg)
 
 
 
 3. **Expense Entry Form:**  
    - Includes fields for amount, date, category, and description with dropdown menus for category selection.  
 
-   ![alt text](Photos/image-2.png)
+   ![alt text](Photos/Pic3.jpg)
 
 4. **Reports Page:**  
    - Allows users to view detailed expense reports, filter by date, and export data in PDF/Excel formats. 
-   ![alt text](Photos/image-3.png) 
+   ![alt text](Photos/Pic4.jpg) 
 
 
-Tools for UI Prototyping: **Figma**.  
+Tools for UI Prototyping: **Figma**. [here](https://www.figma.com/design/H4SGWyUIgBFUWmIejZQHz8/Personal-Expense-Tracker?node-id=0-1&t=3OfykP3QYy3JAXY4-1) 
 
 ---
 
@@ -76,9 +89,9 @@ Tools for UI Prototyping: **Figma**.
 1. **Login/Sign-up → Dashboard → Add Expense → Reports**  
 
 **Technical Design:**  
-1. **Frontend:** Built using **React** with libraries such as **Material-UI** or **TailwindCSS**.  
+1. **Frontend:** Built using **React** with libraries.  
 2. **Backend:** Developed with **Node.js** and **Express.js**.  
-3. **Database:** **MongoDB** for storing user profiles and expenses.  
+3. **Database:** **NoSQL Databases** for storing user profiles and expenses.  
 4. **API Design:**  
    - `POST /expenses` for adding new expenses.  
    - `GET /expenses` for retrieving expense data.  
@@ -90,9 +103,9 @@ Tools for UI Prototyping: **Figma**.
 **Project Management:**  
 - Use tools like **Trello** or **Jira** to organize tasks.  
 - Milestones:
-  - Week 1: Complete definition and design.  
-  - Week 2–4: Develop core functionalities (e.g., expense entry, dashboard).  
-  - Week 5–6: Integrate advanced features (e.g., budget notifications, data export) and test functionality.  
+  - Week 15 (07.04.2025): Complete definition and design.  
+  - Week 16 (14.04.2025): Develop core functionalities (e.g., expense entry, dashboard).  
+  - Week 18 (4.05.2025): Integrate advanced features (e.g., budget notifications, data export) and test functionality.  
 
 **User Testing:**  
 - Recruit 3 –5 testers to review usability.  
