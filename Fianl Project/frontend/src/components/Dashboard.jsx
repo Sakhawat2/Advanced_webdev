@@ -1,12 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import ExpenseForm from './ExpenseForm';
+import Chart from 'chart.js/auto';
+import Header from './Header';
+import '../styles.css';
 
 const Dashboard = () => {
   const [expenses, setExpenses] = useState([]);
-  const userId = localStorage.getItem('userId'); // Get logged-in user ID
+  const chartRef = useRef(null);
+  const userId = localStorage.getItem('userId');
 
-  // Fetch expenses from the server
   const fetchExpenses = async () => {
     try {
       const response = await axios.get(`http://localhost:5000/api/expenses/${userId}`);
@@ -16,64 +18,96 @@ const Dashboard = () => {
     }
   };
 
-  // Add a new expense
-  const handleAddExpense = async (expenseData) => {
-    try {
-      await axios.post('http://localhost:5000/api/expenses', { ...expenseData, userId });
-      fetchExpenses(); // Refresh the list
-    } catch (error) {
-      console.error('Error adding expense:', error);
-    }
-  };
+  useEffect(() => {
+    fetchExpenses();
+  }, []);
 
-  // Update an expense
-  const handleUpdateExpense = async (id, updatedData) => {
-    try {
-      await axios.put(`http://localhost:5000/api/expenses/${id}`, updatedData);
-      fetchExpenses(); // Refresh the list
-    } catch (error) {
-      console.error('Error updating expense:', error);
-    }
-  };
+  useEffect(() => {
+    if (!chartRef.current || expenses.length === 0) return;
 
-  // Delete an expense
+    new Chart(chartRef.current.getContext('2d'), {
+      type: 'bar',
+      data: {
+        labels: expenses.map(exp => exp.category),
+        datasets: [{
+          label: 'Total Spending',
+          data: expenses.map(exp => exp.amount),
+          backgroundColor: 'rgba(75, 192, 192, 0.6)',
+        }]
+      }
+    });
+  }, [expenses]);
+
   const handleDeleteExpense = async (id) => {
     try {
       await axios.delete(`http://localhost:5000/api/expenses/${id}`);
-      fetchExpenses(); // Refresh the list
+      fetchExpenses();
     } catch (error) {
       console.error('Error deleting expense:', error);
     }
   };
 
-  useEffect(() => {
-    fetchExpenses();
-  }, []);
+  const handleUpdateExpense = async (id, currentData) => {
+    const updatedAmount = prompt('Enter new amount:', currentData.amount);
+    const updatedCategory = prompt('Enter new category:', currentData.category);
+    const updatedDescription = prompt('Enter new description:', currentData.description);
+
+    if (updatedAmount !== null && updatedCategory !== null && updatedDescription !== null) {
+      try {
+        await axios.put(`http://localhost:5000/api/expenses/${id}`, {
+          amount: updatedAmount,
+          date: currentData.date,
+          category: updatedCategory,
+          description: updatedDescription,
+        });
+        fetchExpenses();
+      } catch (error) {
+        console.error('Error updating expense:', error);
+      }
+    }
+  };
 
   return (
-    <div>
-      <h2>Dashboard</h2>
-      <ExpenseForm onAddExpense={handleAddExpense} />
-      <h3>Expense Summary</h3>
-      <ul>
-        {expenses.map((expense) => (
-          <li key={expense.id}>
-            {expense.date} - {expense.category} - ${expense.amount}
-            <p>{expense.description}</p>
-            <button onClick={() => handleDeleteExpense(expense.id)}>Delete</button>
-            <button
-              onClick={() => handleUpdateExpense(expense.id, {
-                amount: prompt('Enter new amount:', expense.amount),
-                date: expense.date,
-                category: expense.category,
-                description: prompt('Enter new description:', expense.description),
-              })}
-            >
-              Update
-            </button>
-          </li>
-        ))}
-      </ul>
+    <div className="dashboard-container">
+      <Header /> {/* Use Header here */}
+
+      <div className="expenses-list">
+        <h2>Dashboard</h2>
+        <h3>Expense Summary</h3>
+
+        <table>
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Category</th>
+              <th>Description</th>
+              <th>Amount ($)</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            {expenses.map((expense) => (
+              <tr key={expense.id}>
+                <td>{expense.date}</td>
+                <td>{expense.category}</td>
+                <td>{expense.description}</td>
+                <td>${expense.amount}</td>
+                <td>{expense.category === "Unpaid" ? "🔴 Unpaid" : "🟢 Paid"}</td>
+                <td>
+                  <button onClick={() => handleDeleteExpense(expense.id)}>Delete</button>
+                  <button className="update-btn" onClick={() => handleUpdateExpense(expense.id, expense)}>Update</button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div className="graph-section">
+        <h3>Expense Distribution</h3>
+        <canvas ref={chartRef}></canvas>
+      </div>
     </div>
   );
 };
