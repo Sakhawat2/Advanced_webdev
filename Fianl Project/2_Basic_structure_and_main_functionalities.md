@@ -1,5 +1,5 @@
 # Project phase 2 - Basic structure and main functionalities
-
+The goal of this web app is to help users efficiently track expenses, analyze spending patterns, manage budgets, and gain insights for financial planning through an intuitive and interactive dashboard.
 
 ### **1. Environment**
 - **Frontend Environment**: 
