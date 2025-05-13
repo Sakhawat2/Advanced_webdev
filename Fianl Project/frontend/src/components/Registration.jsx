@@ -11,15 +11,19 @@ const Registration = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await axios.post('http://localhost:5000/api/users/register', formData);
-      setMessage(response.data.message);
-      setFormData({ name: '', email: '', password: '' });
-    } catch (error) {
-      setMessage('Error registering user');
+  e.preventDefault();
+  try {
+    const response = await axios.post('http://localhost:5000/api/users/register', formData);
+    setMessage(response.data.message);
+    setFormData({ name: '', email: '', password: '' });
+  } catch (error) {
+    if (error.response) {
+      setMessage(error.response.data.message); // Show backend error message
+    } else {
+      setMessage('Server not reachable.');
     }
-  };
+  }
+};
 
   return (
     <div style={{ maxWidth: '400px', margin: 'auto', textAlign: 'center' }}>

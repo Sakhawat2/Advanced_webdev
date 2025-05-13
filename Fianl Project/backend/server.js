@@ -56,18 +56,17 @@ app.get('/', (req, res) => {
 // Register user (with password hashing)
 app.post('/api/users/register', (req, res) => {
   const { name, email, password } = req.body;
-
+  
   if (!name || !email || !password) {
     return res.status(400).json({ message: 'All fields are required' });
   }
 
-  bcrypt.hash(password, saltRounds, (err, hashedPassword) => {
+  bcrypt.hash(password, 10, (err, hashedPassword) => {
     if (err) {
       return res.status(500).json({ message: 'Error encrypting password', error: err });
     }
 
     const query = `INSERT INTO users (name, email, password) VALUES (?, ?, ?)`;
-
     db.run(query, [name, email, hashedPassword], function (err) {
       if (err) {
         res.status(500).json({ message: 'Error registering user', error: err });
@@ -105,7 +104,6 @@ app.post('/api/expenses', (req, res) => {
   const { userId, amount, date, category, description } = req.body;
 
   const query = `INSERT INTO expenses (userId, amount, date, category, description) VALUES (?, ?, ?, ?, ?)`;
-
   db.run(query, [userId, amount, date, category, description], function (err) {
     if (err) {
       res.status(500).json({ message: 'Error adding expense', error: err });

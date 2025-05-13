@@ -38,32 +38,41 @@ const ExpenseReport = () => {
   }, [reportData]);
 
   return (
-    <div className="container">
-      <Header /> {/* Use Header here */}
-
-      <h2>Expense Report</h2>
-      <table>
-        <thead>
-          <tr>
-            <th>Month</th>
-            <th>Category</th>
-            <th>Description</th>
-            <th>Total Spent ($)</th>
+    
+    <div className="report-container">
+  {/* Expense Report Table */}
+  <div className="report-table">
+    <Header /> {/* Use Header here */}
+    
+    <h2>Expense Report</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Category</th>
+          <th>Description</th>
+          <th>Total Spent ($)</th>
+        </tr>
+      </thead>
+      <tbody>
+        {reportData.map((item, index) => (
+          <tr key={index}>
+            <td>{item.month_number} {item.year}</td>
+            <td>{item.category}</td>
+            <td>{item.description || "No description"}</td>
+            <td>${item.total_spent.toFixed(2)}</td>
           </tr>
-        </thead>
-        <tbody>
-          {reportData.map((item, index) => (
-            <tr key={index}>
-              <td>{monthNames[item.month_number]} {item.year}</td>
-              <td>{item.category}</td>
-              <td>{item.description || "No description"}</td>
-              <td>${item.total_spent.toFixed(2)}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <canvas ref={chartRef}></canvas>
-    </div>
+        ))}
+      </tbody>
+    </table>
+  </div>
+
+  {/* Graph Section */}
+  <div className="graph-section">
+    <h3>Expense Trends</h3>
+    <canvas ref={chartRef}></canvas>
+  </div>
+</div>
   );
 };
 
