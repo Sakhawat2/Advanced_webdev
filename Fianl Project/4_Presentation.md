@@ -80,7 +80,7 @@ This phase focuses on the **architecture, technologies, and development practice
 
 
 ### **📁 Project Structure**  
-
+```
 Personal-Expense-Tracker/
 │── frontend/
 │   ├── src/
@@ -96,6 +96,8 @@ Personal-Expense-Tracker/
 │   ├── database.db (SQLite DB)
 │   ├── package.json (Backend dependencies)
 │── README.md
+```
+
 
 ✅ **Frontend (React)** handles UI updates dynamically.  
 ✅ **Backend (Express, SQLite)** securely stores and retrieves expense data.  
