@@ -243,14 +243,14 @@ new Chart(chartRef.current.getContext('2d'), {
 ## 📊 **Work Hours Log**  
 | Date | Task | Hours Spent |
 |------|------|------------|
-| Day 1 | Research & Planning | 4 hrs |
-| Day 2 | Backend Setup (Authentication, APIs) | 16 hrs |
-| Day 3 | UI Development (Login, Dashboard) | 25 hrs |
-| Day 4 | Expense Entry Form + Database | 25 hrs |
-| Day 5 | Graphs & Report Design | 16 hrs |
-| Day 6 | Testing | 6 Hrs|
-| Day 6 | Debugging & Styling Improvements | 5 hrs |
-| Day 7 | Final Testing & Presentation Setup | 6 hrs |
+| Week 15 (07.04.2025) | Research & Planning | 4 hrs |
+| Week 16 (14.04.2025) | Backend Setup (Authentication, APIs) | 16 hrs |
+| Week 17 (21.04.2025) | UI Development (Login, Dashboard) | 25 hrs |
+| Week 18 (28.04.2025) | Expense Entry Form + Database | 25 hrs |
+| Week 19 (05.05.2025) | Testing | 6 hrs |
+| Week 20 (12.05.2025) |  Graphs & Report Design | 16 hrs |
+| Week 20 (12.05.2025) | Debugging & Styling Improvements | 5 hrs |
+| Week 20 (12.05.2025) | Final Testing & Presentation Setup | 6 hrs |
 
 ---
 
