@@ -161,7 +161,6 @@ app.post('/api/expenses', (req, res) => {
 ```
 ✅ **Stores expense details in the SQLite database.**  
 
----
 
 #### **✅ Dynamic Graph Updates in Reports**
 ```js
@@ -186,7 +185,19 @@ new Chart(chartRef.current.getContext('2d'), {
 ✔ **Export financial reports** – CSV/PDF format.  
 ✔ **Machine learning insights** – Expense predictions based on history.  
 
----
+### **🚀 Testing and Error Handling**
+- **Testing**:
+  - Backend APIs tested using Postman to verify functionality and edge cases.
+  - Frontend 
+  Using below test:
+
+| Test Type | Test Method Represented | Typical Tools |
+|-------------------|--------------------------|-------------------|
+| Unit Testing | Dynamic, Automatic | Vitesta |
+| End-to-End (E2E) Testing | Dynamic, Automated | Playwright |
+| Load Testing | Dynamic, Automated | k6 |
+
+
 
 ### **🔍 Summary**  
 ✅ **Well-structured architecture** ensuring smooth performance.  
@@ -196,7 +207,6 @@ new Chart(chartRef.current.getContext('2d'), {
 
 ---
 
----
 
 ## 🚂 **Development Process**  
 ### **Key Steps in Progress:**  
