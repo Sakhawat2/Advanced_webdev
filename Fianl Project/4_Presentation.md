@@ -30,7 +30,7 @@ The **Personal Expense Tracker** is designed with simplicity in mind, ensuring t
 💡 **Visual Insights with Graphs** – Helps users understand financial habits better.  
 💡 **Mobile-Friendly Design** – Accessible across different devices.  
 
-### 📈 **Why Is This Project Important?**  
+### 📈 **Importance of this Project**  
 
 💰 **Improves Financial Awareness** – Users become more mindful of spending habits.  
 📊 **Encourages Budgeting** – Helps plan budgets based on data-driven insights.  
@@ -244,12 +244,13 @@ new Chart(chartRef.current.getContext('2d'), {
 | Date | Task | Hours Spent |
 |------|------|------------|
 | Day 1 | Research & Planning | 4 hrs |
-| Day 2 | Backend Setup (Authentication, APIs) | 6 hrs |
-| Day 3 | UI Development (Login, Dashboard) | 5 hrs |
-| Day 4 | Expense Entry Form + Database | 5 hrs |
-| Day 5 | Graphs & Report Design | 6 hrs |
+| Day 2 | Backend Setup (Authentication, APIs) | 16 hrs |
+| Day 3 | UI Development (Login, Dashboard) | 25 hrs |
+| Day 4 | Expense Entry Form + Database | 25 hrs |
+| Day 5 | Graphs & Report Design | 16 hrs |
+| Day 6 | Testing | 6 Hrs|
 | Day 6 | Debugging & Styling Improvements | 5 hrs |
-| Day 7 | Final Testing & Presentation Setup | 4 hrs |
+| Day 7 | Final Testing & Presentation Setup | 6 hrs |
 
 ---
 
