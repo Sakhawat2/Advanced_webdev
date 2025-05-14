@@ -258,9 +258,9 @@ new Chart(chartRef.current.getContext('2d'), {
 
 The **Personal Expense Tracker** project has been a valuable experience in building a functional, user-friendly financial management tool. From conceptualization to implementation, we successfully developed a secure platform where users can track their expenses, visualize spending habits, and improve financial awareness. User-Centric Design ensuring simplicity and efficiency in managing expenses. Robust Backend secure data handling and structured API endpoints for seamless operations. Graphical Insights enabling users to interpret financial trends visually. Continuous Iteration enhancing features based on user feedback and usability improvements. Several Challenges has been Overcome by fixing authentication issues for smooth user login and registration. In addition, by improving UI layout for clearer financial data presentation. Moreover, aligning dashboard & report sections properly for enhanced accessibility. In terms of Future Scope, Mobile App Version for better accessibility across devices. AI-driven expense recommendations for smarter financial management. Automated budget tracking based on historical spending patterns. This project demonstrates the importance of structured financial tracking and highlights our ability to build scalable, well-designed web applications. It serves as a foundation for future enhancements and real-world implementations.  
 
-
 ---
 
-
+## **Presentation Link** 
+Full Presentatin [Video](https://drive.google.com/file/d/1NC8JPXsIw0_RlrAuiNqzWCAH58bOT3py/view?usp=sharing)
 
 
