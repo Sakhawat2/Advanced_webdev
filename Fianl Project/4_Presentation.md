@@ -45,11 +45,11 @@ The **Personal Expense Tracker** is not just an academic project but a **practic
 
 | Use Case | Implemented (Yes/No) | Demonstration / Notes |
 |----------|----------------------|------------------------|
-| User logs in and accesses the dashboard | ✅ Yes | Implemented with secure session handling. Demo at **2:45** in the video. |
-| User registers for an account | ✅ Yes | Registration system with backend validation. Demo at **1:30** in the video. |
-| User adds expenses | ✅ Yes | Users enter amount, category, date, and description. Demo at **3:15**. |
-| User updates and deletes expenses | ✅ Yes | Edit and delete functions available. Demo at **4:00**. |
-| Expense reports and spending trends | ✅ Yes | Chart.js used for visualization. Demo at **5:30**. |
+| User logs in and accesses the dashboard | ✅ Yes | Implemented with secure session handling. Demo at **2:27** in the video. |
+| User registers for an account | ✅ Yes | Registration system with backend validation. Demo at **1:12** in the video. |
+| User adds expenses | ✅ Yes | Users enter amount, category, date, and description. Demo at **3:44**. |
+| User updates and deletes expenses | ✅ Yes | Edit and delete functions available. Demo at **4:45**. |
+| Expense reports and spending trends | ✅ Yes | Chart.js used for visualization. Demo at **2:00**. |
 | Admin panel for managing users | ❌ No | Not prioritized—possible future feature. |
 
 ✅ **Demo timestamps** help guide viewers through key project features.  
